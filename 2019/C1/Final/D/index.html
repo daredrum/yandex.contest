@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 240px;
+        overflow: hidden;
+    }
+
+    label {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        background: #f4cd8d;
+    }
+
+    label .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        background: #f4cd8d;
+    }
+
+    label:nth-child(-2n+8) .bg,
+    label:nth-child(8) ~ label:nth-child(-2n+15) .bg,
+    label:nth-child(16) ~ label:nth-child(-2n+24) .bg,
+    label:nth-child(24) ~ label:nth-child(-2n+31) .bg,
+    label:nth-child(32) ~ label:nth-child(-2n+40) .bg,
+    label:nth-child(40) ~ label:nth-child(-2n+47) .bg,
+    label:nth-child(48) ~ label:nth-child(-2n+56) .bg,
+    label:nth-child(56) ~ label:nth-child(-2n+63) .bg {
+        background: #745853;
+    }
+
+    label input {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+
+    label.item input:checked ~ .bg {
+        background: #ff0000;
+    }
+
+    label input:checked ~ .c1:after,
+    label input:checked ~ .c1:before,
+    label input:checked ~ .c2:after,
+    label input:checked ~ .c2:before,
+    label input:checked ~ .c3:after,
+    label input:checked ~ .c3:before,
+    label input:checked ~ .c4:after,
+    label input:checked ~ .c4:before {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: #0000ff;
+        z-index: 1;
+    }
+
+    label input:checked ~ .c1:after {
+        top: -30px;
+        left: -60px;
+    }
+    label input:checked ~ .c1:before {
+        top: -60px;
+        left: -30px;
+    }
+    label input:checked ~ .c2:after {
+        top: -60px;
+        left: 30px;
+    }
+    label input:checked ~ .c2:before {
+        top: -30px;
+        left: 60px;
+    }
+    label input:checked ~ .c3:after {
+        top: 30px;
+        left: 60px;
+    }
+    label input:checked ~ .c3:before {
+        top: 60px;
+        left: 30px;
+    }
+    label input:checked ~ .c4:after {
+        top: 60px;
+        left: -30px;
+    }
+    label input:checked ~ .c4:before {
+        top: 30px;
+        left: -60px;
+    }
+</style>
+<body>
+<div class="container">
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <inpu"radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <inpu"radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <inpu"radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <inpu"radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <inpu"radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <inpu"radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <inpu"radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <inpu"radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+    <label class="item">
+        <input type="radio" name="item">
+        <div class="bg"></div>
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </label>
+</div>
+</body>
+</html>
