@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 200px);
+            grid-gap: 20px;
+            margin: 0;
+        }
+        .single {
+            background: #8a2be2
+        }
+        .double {
+            background: #000;
+        }
+        .one {
+            grid-column: 1;
+            grid-row: 1;
+        }
+        .two {
+            grid-column: 2;
+            grid-row: 1;
+        }
+        .three {
+            grid-column: 3;
+            grid-row: 1;
+        }
+        .four {
+            grid-column: 1;
+            grid-row: 2;
+        }
+        .five {
+            grid-column: 2 / 4;
+            grid-row: 2;
+        }
+        .six {
+            grid-column: 1 / 3;
+            grid-row: 3;
+        }
+        .seven {
+            grid-column: 3;
+            grid-row: 3;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="one single"></div>
+    <div class="two single"></div>
+    <div class="three single"></div>
+    <div class="four single"></div>
+    <div class="five double"></div>
+    <div class="six double"></div>
+    <div class="seven single"></div>
+</div>
+</body>
+</html>
